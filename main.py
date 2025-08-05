@@ -47,12 +47,12 @@ bot = Client(
     bot_token=BOT_TOKEN
 )
 
-AUTH_USER = os.environ.get('AUTH_USERS', '1226915008,7341059064,8144269730,6440249117,614886582,5817712634,7615363859,1511257208,5486913681,761536385,7080838404,1526362848').split(',')
+AUTH_USER = os.environ.get('AUTH_USERS', '').split(',')
 AUTH_USERS = [int(user_id) for user_id in AUTH_USER]
 if int(OWNER) not in AUTH_USERS:
     AUTH_USERS.append(int(OWNER))
 CHANNEL_OWNERS = {}
-CHANNELS = os.environ.get('CHANNELS', '').split(',')
+CHANNELS = os.environ.get('CHANNELS', '7836790905,7212452634,8117793426,5817712634,7958016772,7341059064,7714608838,8007442798,7068000043,7062964338,6947024366,5682377441,7504558633,6440249117,7943069140,5486913681,1959279443,1511257208,1226915008,7080838404,6148865829').split(',')
 CHANNELS_LIST = [int(channel_id) for channel_id in CHANNELS if channel_id.isdigit()]
 cookies_file_path = os.getenv("cookies_file_path", "youtube_cookies.txt")
 api_url = "http://master-api-v3.vercel.app/"
